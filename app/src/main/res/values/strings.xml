@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">NullClass</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="create_login">Already have an account?<font fgcolor='#311B92'><b> Log in.</b></font></string>
+    <string name="login_forgot">Forgot your login details?<font fgcolor='#311B92'><b> Get help logging in.</b></font></string>
+    <string name="login_signup">Don\'t have an account?<font fgcolor='#311B92'><b> Sign up.</b></font></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
