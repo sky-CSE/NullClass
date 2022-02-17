@@ -43,10 +43,10 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(it -> {
             String email = userId_field.getText().toString();
             String password = password_field.getText().toString();
-            if(email.isEmpty()){
+            if (email.isEmpty()) {
                 Toast.makeText(this, "Enter valid email", Toast.LENGTH_SHORT).show();
                 return;
-            }else if(password.isEmpty()){
+            } else if (password.isEmpty()) {
                 Toast.makeText(this, "Enter valid password", Toast.LENGTH_SHORT).show();
                 return;
             }

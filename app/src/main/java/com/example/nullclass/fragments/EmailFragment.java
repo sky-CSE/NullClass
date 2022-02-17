@@ -14,12 +14,8 @@ import androidx.fragment.app.Fragment;
 
 import com.example.nullclass.R;
 import com.example.nullclass.activities.MainActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import java.util.concurrent.Executor;
 
 
 public class EmailFragment extends Fragment {
@@ -48,14 +44,14 @@ public class EmailFragment extends Fragment {
             String email = email_field.getText().toString();
             String password = password_field.getText().toString();
 
-            if(email.isEmpty() || password.isEmpty()){
+            if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(getActivity(),
                         "Enter valid email-password combination", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             mAuth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(getActivity(), (OnCompleteListener<AuthResult>) task -> {
+                    .addOnCompleteListener(getActivity(), task -> {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");

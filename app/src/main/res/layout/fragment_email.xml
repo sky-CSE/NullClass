@@ -2,9 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginTop="12dp"
+    android:background="@android:color/transparent"
     android:orientation="vertical"
+    android:layout_centerInParent="true"
     tools:context=".fragments.EmailFragment">
 
     <EditText
@@ -17,9 +19,11 @@
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="12dp"
         android:ems="10"
-        android:hint="Email"
+        android:hint="Enter an email id"
         android:inputType="textEmailAddress"
-        android:paddingStart="20dp" />
+        android:paddingStart="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="#CDFFFFFF" />
 
     <EditText
         android:id="@+id/fragment_email_password"
@@ -30,20 +34,20 @@
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="12dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="Create Password"
         android:inputType="textPassword"
-        android:paddingStart="20dp" />
+        android:paddingStart="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="#CDFFFFFF" />
 
     <Button
         android:id="@+id/fragment_email_next"
-        style="@android:style/Widget.Button"
+        style="@style/Widget.Material3.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginEnd="48dp"
-        android:background="#651FFF"
         android:text="Next"
-        android:textColor="@color/white"
         android:textSize="18sp"
         tools:ignore="TextContrastCheck" />
 </LinearLayout>

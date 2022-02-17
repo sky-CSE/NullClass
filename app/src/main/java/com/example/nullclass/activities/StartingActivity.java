@@ -11,15 +11,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class StartingActivity extends AppCompatActivity {
-Button createAccount,logIn;
-private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    Button createAccount, logIn;
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser!=null) {
+        if (currentUser != null) {
             Intent i = new Intent(StartingActivity.this, MainActivity.class);
             startActivity(i);
             finish();
@@ -39,7 +39,7 @@ private FirebaseAuth mAuth = FirebaseAuth.getInstance();
             startActivity(i);
         });
         logIn.setOnClickListener(view -> {
-            Intent i = new Intent(StartingActivity.this,LoginActivity.class);
+            Intent i = new Intent(StartingActivity.this, LoginActivity.class);
             startActivity(i);
         });
     }
