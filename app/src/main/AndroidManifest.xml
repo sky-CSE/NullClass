@@ -12,9 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Common">
         <activity
-            android:name=".activities.ForgotPassActivity"
-            android:exported="false" />
-        <activity
             android:name=".activities.PhoneActivity"
             android:exported="false" />
         <activity

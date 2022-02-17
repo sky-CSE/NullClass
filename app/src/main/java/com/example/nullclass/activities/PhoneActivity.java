@@ -37,6 +37,11 @@ public class PhoneActivity extends AppCompatActivity {
         sendCode.setOnClickListener(it -> {
             String phoneNumber = phoneField.getText().toString();
             phoneNumber = "+91"+phoneNumber;
+            if(phoneNumber.isEmpty()){
+                Toast.makeText(this, "Enter valid phone number", Toast.LENGTH_SHORT)
+                        .show();
+                return;
+            }
 
             PhoneAuthOptions options =
                     PhoneAuthOptions.newBuilder(mAuth)
@@ -76,6 +81,10 @@ public class PhoneActivity extends AppCompatActivity {
 
     public void signInWithPhoneCode() {
         String codeTyped = OTPField.getText().toString();
+        if(codeTyped.isEmpty()){
+            Toast.makeText(this, "Enter valid OTP", Toast.LENGTH_SHORT).show();
+            return;
+        }
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(codeSent, codeTyped);
         signInWithPhoneAuthCredential(credential);
     }

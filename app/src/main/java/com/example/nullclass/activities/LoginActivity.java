@@ -43,6 +43,13 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(it -> {
             String email = userId_field.getText().toString();
             String password = password_field.getText().toString();
+            if(email.isEmpty()){
+                Toast.makeText(this, "Enter valid email", Toast.LENGTH_SHORT).show();
+                return;
+            }else if(password.isEmpty()){
+                Toast.makeText(this, "Enter valid password", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, task -> {
@@ -67,7 +74,21 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         forgot_message.setOnClickListener(it -> {
-
+            String email = userId_field.getText().toString();
+            if (email.isEmpty()) {
+                Toast.makeText(this, "Enter email then click 'reset password'", Toast.LENGTH_SHORT).show();
+            } else {
+                mAuth.sendPasswordResetEmail(email)
+                        .addOnCompleteListener(task -> {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(getApplicationContext(), "A link is sent to you.\nCheck your mail please",
+                                        Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(),
+                                        "Email don't exist", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            }
         });
         signup_message.setOnClickListener(it -> {
             Intent i = new Intent(LoginActivity.this, SignUpActivity.class);

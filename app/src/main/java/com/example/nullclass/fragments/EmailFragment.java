@@ -48,7 +48,7 @@ public class EmailFragment extends Fragment {
             String email = email_field.getText().toString();
             String password = password_field.getText().toString();
 
-            if(email.equals("")||email.equals(null) || password.equals("")||password.equals(null)) {
+            if(email.isEmpty() || password.isEmpty()){
                 Toast.makeText(getActivity(),
                         "Enter valid email-password combination", Toast.LENGTH_SHORT).show();
                 return;
